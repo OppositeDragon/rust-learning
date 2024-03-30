@@ -1,4 +1,3 @@
-use std::rc::Rc;
 use std::sync::{mpsc, Arc, Mutex};
 use std::thread;
 use std::time::Duration;
@@ -59,7 +58,7 @@ fn main() {
         println!("Got: {}", received);
     }
     //Mutex - shared state concurrency
-    let counter =Arc::new(Mutex::new(0));
+    let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
     for _ in 0..10 {
